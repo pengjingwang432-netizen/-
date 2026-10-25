@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#15354b">
+<title>Bilingual Reading Notes｜双语阅读笔记</title>
+<style>
+:root{--navy:#15354b;--blue:#28749a;--ink:#203040;--muted:#627789;--paper:#fff;--bg:#f3f6f9;--line:#dbe5ec;--soft:#edf5f8;--gold:#e5b45f;--danger:#a33b3b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top left,#e8f1f7 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{width:min(980px,100%);margin:auto}header{padding:34px 18px 30px;background:linear-gradient(125deg,#102f46,#205b7a 60%,#3d8ba5);color:white;position:relative;overflow:hidden}header:after{content:"";position:absolute;width:280px;height:280px;border:1px solid #ffffff20;border-radius:50%;right:-95px;top:-145px;box-shadow:0 0 0 28px #ffffff08,0 0 0 58px #ffffff06;pointer-events:none}.hero{position:relative;z-index:1}.brand{display:flex;align-items:center;gap:14px}.logo{display:grid;place-items:center;width:54px;height:54px;border-radius:17px;background:#ffffff20;border:1px solid #ffffff30;font-size:27px}h1{font-size:clamp(24px,5vw,34px);line-height:1.2;margin:0}header p{margin:12px 0 0;color:#e2edf5;font-size:15px}.header-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.header-link{display:inline-flex;align-items:center;text-decoration:none;background:#ffffff20;border:1px solid #ffffff70;color:white;border-radius:10px;padding:8px 12px;font-weight:650}
+main{padding:20px 14px 44px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;position:sticky;top:0;z-index:5;padding:10px 0;background:#f3f6f9ed;backdrop-filter:blur(10px)}button,.file-button{font:inherit;border:0;border-radius:11px;background:var(--blue);color:white;padding:10px 14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-weight:650;transition:transform .15s,filter .15s}button:hover,.file-button:hover{filter:brightness(.98);transform:translateY(-1px)}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #92c8e2;outline-offset:2px}.tab{border:1px solid var(--line);background:#fff;color:var(--navy);padding:10px 15px;box-shadow:0 2px 6px #15354b08}.tab.active{background:var(--navy);color:white;border-color:var(--navy)}.panel{background:var(--paper);border:1px solid #e1e9ef;border-radius:19px;padding:21px;margin-bottom:16px;box-shadow:0 8px 24px #15354b0a}h2{font-size:21px;letter-spacing:-.02em;line-height:1.35;margin:0 0 12px}h3{font-size:17px;line-height:1.4;margin:0 0 8px}label{display:block;font-weight:650;margin:12px 0 5px}input,textarea,select{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid #d2dee6;border-radius:11px;padding:11px 12px}textarea{min-height:82px;resize:vertical}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.secondary,.file-button{background:var(--soft);color:var(--navy)}.danger{background:#f9eaea;color:var(--danger)}.small{padding:7px 10px;font-size:14px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.muted{color:var(--muted);font-size:14px}.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.stat{background:white;border:1px solid #e1e9ef;border-radius:15px;padding:13px 16px;flex:1;min-width:110px;box-shadow:0 4px 12px #15354b07}.stat strong{display:block;font-size:26px;color:var(--navy)}.searchrow{display:flex;gap:8px;align-items:center;margin-bottom:12px}.searchrow input{flex:1;min-width:0}.note{background:white;border:1px solid #e0e8ee;border-radius:18px;padding:20px;margin-bottom:13px;box-shadow:0 6px 18px #15354b08;overflow:hidden}.note h3{font-size:21px;overflow-wrap:anywhere}.note .meta{color:var(--muted);font-size:13px;margin:8px 0 14px}.note-section{background:#f8fafc;border-radius:12px;padding:12px 14px;margin-top:10px}.note-section .label{font-size:11px;font-weight:800;letter-spacing:.07em;color:var(--blue);margin-bottom:5px}.note-section p{white-space:pre-wrap;margin:0;overflow-wrap:anywhere;line-height:1.8}.translation{background:#eaf4f8;border-left:3px solid #75a9c3;padding:10px;border-radius:8px}.empty{text-align:center;padding:28px 12px;color:var(--muted);background:white;border:1px dashed #bdcbd6;border-radius:14px}.hidden{display:none!important}.file-button input{display:none}footer{text-align:center;color:var(--muted);font-size:13px;padding:0 12px 28px}hr{border:0;border-top:1px solid var(--line);margin:16px 0}
+.featured-guide{background:linear-gradient(135deg,#fff,#f4f9fc);border:1px solid #dce8ef;border-radius:21px;padding:22px;margin:0 0 20px;box-shadow:0 8px 24px #15354b0a}.guide-kicker{font-size:12px;letter-spacing:.12em;font-weight:850;color:var(--blue);text-transform:uppercase}.guide-title{font-size:clamp(25px,4.5vw,33px);line-height:1.2;margin:7px 0 10px;color:var(--navy)}.lead{margin:0;color:#526b7d;max-width:780px}.article-meta{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 18px}.meta-chip{display:inline-flex;align-items:center;background:#e8f1f6;color:#234e68;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:750}.guide-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:13px;margin-top:15px}.guide-block{background:white;border:1px solid #e1eaf0;border-radius:14px;padding:15px}.guide-block h3{font-size:15px;color:#1e5877;margin-bottom:7px}.guide-block p,.guide-block li{font-size:14px;line-height:1.8}.guide-block p{margin:0}.guide-block ul{margin:7px 0 0;padding-left:19px}.reading-path{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.path-step{background:#fff;border:1px solid #e1eaf0;border-radius:12px;padding:11px}.path-step strong{display:block;font-size:12px;color:#28749a;margin-bottom:4px}.path-step span{display:block;font-size:12px;line-height:1.6;color:#516879}.guide-note{font-size:12px;color:#657786;margin-top:13px}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 12px}.section-heading h2{margin:0}.file-button{cursor:pointer}
+@media(max-width:620px){header{padding:27px 16px 24px}.panel{padding:16px}.note{padding:15px}.featured-guide{padding:16px}.guide-grid{grid-template-columns:1fr}.reading-path{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.searchrow{align-items:stretch;flex-wrap:wrap}.searchrow input{flex-basis:100%}button{min-height:42px}.tab{padding:9px 11px;font-size:14px}}
+</style>
+</head>
+<body>
+<header><div class="wrap hero">
+  <div class="brand"><div class="logo" aria-hidden="true">文</div><div><h1>Bilingual Reading Notes</h1><div>双语阅读笔记</div></div></div>
+  <p>Read deeply. Think critically. Learn bilingually.<br>精读文章 · 拆解论证 · 积累表达 · 形成自己的观点</p>
+  <div class="header-actions"><a class="header-link" href="https://canva.link/a5k2dcrv1zxob7f" target="_blank" rel="noopener noreferrer">🎨 打开 Canva 精读轮播模板</a></div>
+</div></header>
+<main class="wrap">
+  <div class="tabs" role="tablist" aria-label="主菜单">
+    <button class="tab active" data-view="library">📚 阅读首页</button>
+    <button class="tab" data-view="editor">✍️ 新建笔记</button>
+    <button class="tab" data-view="backup">💾 备份与数据</button>
+  </div>
+  <section id="library-view">
+    <section class="featured-guide" aria-labelledby="featured-title">
+      <div class="guide-kicker">Featured reading · 本期精读</div>
+      <h2 class="guide-title" id="featured-title">Thoroughly Modern Marx</h2>
+      <p class="lead">从 2008 年金融危机出发，理解 Leo Panitch 为什么认为马克思对资本主义的分析仍值得重新阅读——以及为什么经济危机并不会自动带来社会变革。</p>
+      <div class="article-meta">
+        <span class="meta-chip">✍️ Leo Panitch</span><span class="meta-chip">📰 Foreign Policy</span><span class="meta-chip">📅 May/June 2009</span><span class="meta-chip">📖 Unit 2 · Text 5</span>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-block"><h3>这篇文章讲什么？ · Article overview</h3><p>文章把 2008 年金融危机作为切入点，讨论马克思关于竞争性市场、金融投机和资本主义周期性危机的分析为何再次受到关注。作者进一步强调：危机暴露制度问题，却不会自行产生替代方案；社会组织、集体行动与政治选择会影响危机之后的走向。</p></div>
+        <div class="guide-block"><h3>阅读时抓住的核心问题 · Key question</h3><p><strong>Why read Marx today?</strong><br>不只是问“马克思是否预测对了”，还要追问：经济危机如何形成？为什么个体看似理性的选择可能导致整体不良结果？危机之后，社会如何组织出不同的制度选择？</p></div>
+      </div>
+      <div class="guide-block" style="margin-top:12px"><h3>论证路线图 · Argument map</h3>
+        <div class="reading-path">
+          <div class="path-step"><strong>01 · 引出问题</strong><span>金融危机与马克思重新受到关注。</span></div>
+          <div class="path-step"><strong>02 · 解释机制</strong><span>市场竞争、金融扩张与危机倾向。</span></div>
+          <div class="path-step"><strong>03 · 转向社会</strong><span>危机不会自动转化为集体行动。</span></div>
+          <div class="path-step"><strong>04 · 得出判断</strong><span>制度变化还涉及组织、政治与社会选择。</span></div>
+        </div>
+      </div>
+      <p class="guide-note">学习提示：上面是根据课程阅读材料整理的导读与结构概括，不是原文逐字摘录；阅读时应区分文章背景、作者解释、推论与价值判断。</p>
+    </section>
+    <div class="stats"><div class="stat"><strong id="stat-total">0</strong><span class="muted">篇笔记 Notes</span></div><div class="stat"><strong id="stat-words">0</strong><span class="muted">条表达记录 Expressions</span></div></div>
+    <div class="panel"><h2>🔎 查找笔记 · Find a note</h2><div class="searchrow"><input id="search" type="search" placeholder="搜索文章标题、来源、英文表达或中文内容…"><select id="sort" aria-label="排序方式" style="width:auto;max-width:155px"><option value="new">最新创建</option><option value="old">最早创建</option><option value="title">标题 A–Z</option></select></div><p class="muted">小提示：可以搜索作者、刊物、关键词或自己的反思。</p></div>
+    <div class="section-heading"><h2>我的笔记库 <span class="muted">· My reading library</span></h2></div><div id="notes-list"></div>
+  </section>
+  <section id="editor-view" class="hidden"><div class="panel">
+    <h2 id="editor-heading">新建阅读笔记 · Create a note</h2><p class="muted">文章标题为必填。保存后，笔记保存在当前浏览器中。</p>
+    <form id="note-form"><div class="grid">
+      <div><label for="title">Article title / 文章标题 *</label><input id="title" required maxlength="180" placeholder="Thoroughly Modern Marx"></div>
+      <div><label for="source">Source / 来源</label><input id="source" maxlength="180" placeholder="Foreign Policy, May/June 2009"></div>
+      <div><label for="date">Reading date / 阅读日期</label><input id="date" type="date"></div>
+      <div><label for="author">Author / 作者</label><input id="author" maxlength="120" placeholder="Leo Panitch"></div>
+    </div>
+    <label for="idea">Main idea / 核心观点</label><textarea id="idea" placeholder="作者的主要论点是什么？What is the author's main argument?"></textarea>
+    <label for="excerpt">English excerpt / 英文摘录</label><textarea id="excerpt" placeholder="记录短句、关键表达或值得分析的段落。避免大段复制原文。"></textarea>
+    <label for="translation">Chinese translation / 中文理解</label><textarea id="translation" placeholder="记录自己的译文、释义或理解。"></textarea>
+    <label for="vocab">Vocabulary & chunks / 生词与表达</label><textarea id="vocab" placeholder="表达 — 中文释义 — 使用语境 — 自己编写的例句"></textarea>
+    <label for="structure">Structure / 行文结构</label><textarea id="structure" placeholder="作者如何展开论证？段落之间如何衔接？"></textarea>
+    <label for="language">Language / 语言特色</label><textarea id="language" placeholder="连接词、修辞、语气、句式或翻译难点。"></textarea>
+    <label for="originality">Reflection / 个人思考</label><textarea id="originality" placeholder="这篇文章让你重新思考了什么？哪些是事实，哪些是作者解释或价值判断？"></textarea>
+    <div class="actions"><button id="save-button" type="submit">保存笔记 · Save note</button><button class="secondary" id="clear-button" type="button">清空表单 · Clear form</button></div>
+    </form></div></section>
+  <section id="backup-view" class="hidden"><div class="panel">
+    <h2>备份与恢复 · Backup & restore</h2><p>笔记保存在当前浏览器的本地存储中。清除浏览器数据、换手机或换浏览器可能导致笔记无法自动显示，请定期导出 JSON 备份。</p>
+    <div class="actions"><button id="export-button" type="button">导出全部笔记 JSON</button><label class="file-button">导入备份 JSON<input id="import-input" type="file" accept=".json,application/json"></label></div>
+    <hr><h3>关于数据保存 · Storage note</h3><p class="muted">这是一个静态网页，不会把笔记自动上传到 GitHub 或云端。导出的备份可能包含私人笔记，请妥善保管。</p><hr>
+    <h3>删除本机数据 · Danger zone</h3><p class="muted">只有在确认不再需要当前浏览器中的笔记时才使用；建议先导出备份。</p><button class="danger" id="delete-all-button" type="button">删除本机全部笔记</button>
+  </div></section>
+</main>
+<footer>Bilingual Reading Notes · A small project for lifelong learning<br>数据仅保存在当前浏览器；请定期备份。 · <a href="https://canva.link/a5k2dcrv1zxob7f" target="_blank" rel="noopener noreferrer">Canva 模板</a></footer>
+<script>
+(function(){
+"use strict";
+const KEY="bilingual-reading-notes-v1";
+const fields=["title","source","date","author","idea","excerpt","translation","vocab","structure","language","originality"];
+let notes=[],editingId=null;const $=id=>document.getElementById(id);const safe=v=>typeof v==="string"?v:"";
+const starterNote={
+id:"starter-thoroughly-modern-marx",title:"Thoroughly Modern Marx｜双语精读与表达拆解",
+source:"Foreign Policy, May/June 2009；课程阅读材料 Unit 2, Text 5",date:"2026-10-25",author:"Leo Panitch",
+idea:"文章以 2008 年金融危机为背景，解释马克思为什么重新受到关注。作者认为，马克思对资本主义市场竞争、金融投机和周期性危机的分析仍有解释力；但危机本身不会自动带来社会变革。集体组织、政治行动与制度建设同样重要。注意：这是作者的论证立场，不等于所有经济学家都认同的定论。",
+excerpt:"“the contradictions inherent in a world comprised of competitive markets, commodity production, and financial speculation” (para. 3)\n“thinking inside the box” (para. 11)\n“microrational behavior has the worst macroeconomic outcomes” (para. 14)\n“such crises are part and parcel of capitalism's continued dynamic existence” (para. 17)",
+translation:"第 3 段：竞争性市场、商品生产和金融投机所构成的世界，其内在矛盾。\n第 11 段：在既有框架内思考。作者用它批评只做有限修补、却不改变基本制度逻辑的方案。\n第 14 段：微观层面看似理性的行为，可能造成糟糕的宏观经济结果。\n第 17 段：这类危机是资本主义持续动态发展过程的一部分。以上为学习用译意，具体译法可根据上下文调整。",
+vocab:"1. inherent in sth. — 内在于……；是……固有的\nOriginal example: Uncertainty is inherent in long-term investment. — 不确定性是长期投资固有的一部分。\n\n2. think inside the box — 局限于既有框架思考；与 think outside the box（跳出框架思考）形成对照。\nOriginal example: The team kept thinking inside the box and proposed only minor changes. — 团队一直局限于既有框架，只提出了小幅修改。\n\n3. part and parcel of sth. — ……不可分割的一部分。\nOriginal example: Feedback is part and parcel of learning a language. — 反馈是语言学习不可分割的一部分。\n\n4. not merely A but B — 不只是 A，而是 B；突出更深一层的目标。\nOriginal example: Critical reading means not merely understanding a claim but examining how it is supported. — 批判性阅读不只是理解观点，还要考察观点如何得到论证。",
+structure:"1–2 段：用金融危机和《资本论》关注度上升引出问题。\n3–6 段：回顾马克思对资本主义全球化、市场扩张和危机倾向的分析，提出“今天为什么仍要读马克思”。\n7–10 段：解释金融创新、信贷依赖和住房泡沫如何与社会脆弱性联系；指出经济灾难不会自动带来改变。\n11–13 段：比较有限改革与更深层的金融制度改革，强调制度方案需要社会力量和政治运动支持。\n14–16 段：从企业个体的自保行为谈到宏观后果，并延伸至气候问题和国际团结。\n17 段：回到核心判断——危机是资本主义动态运行的一部分，马克思因此被作者评价为更具现实意义的思想家。",
+language:"• 设问推进：以“why resurrect Marx?”把背景介绍转为核心问题。\n• 历史类比：将马克思的分析与现代金融机构、金融工具并置。\n• 对比结构：有限改革 vs. 制度性改革；个体层面的理性 vs. 宏观层面的不良结果。\n• 隐喻：sorcerer（巫师）意象把资本主义描绘成难以控制自己召唤出的力量。\n• 评价性语气：作者倾向于集体行动和更深层的制度变革。阅读时应区分事实背景、作者解释与价值判断。",
+originality:"值得注意的不是简单得出“危机证明马克思完全正确”，而是作者把问题从金融市场出了什么故障，推进到社会为什么难以组织出替代方案。可区分三个层次：经济机制、社会关系、政治行动。\n\n批判性阅读问题：作者用 2008 年危机支持马克思的分析，哪些论据最有说服力？哪些属于推论或政治立场，而不是单凭危机事实就能证明的结论？\n\n说明：本文导读与结构概括为学习笔记；表达例句为原创示例，并非原文引句。Canva 模板：https://canva.link/a5k2dcrv1zxob7f",
+createdAt:"2026-10-25T00:00:00.000Z",updatedAt:"2026-10-25T00:00:00.000Z"
+};
+function load(){try{const raw=localStorage.getItem(KEY);if(raw===null){notes=[starterNote];localStorage.setItem(KEY,JSON.stringify(notes));}else{const parsed=JSON.parse(raw);notes=Array.isArray(parsed)?parsed.filter(n=>n&&typeof n.id==="string"&&fields.every(k=>typeof n[k]==="string")):[];if(!notes.length)notes=[starterNote];}}catch(e){notes=[starterNote];}}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(notes));return true}catch(e){alert("保存失败。请先导出备份，并检查浏览器存储空间或隐私设置。");return false}}
+function showView(name){["library","editor","backup"].forEach(v=>$(v+"-view").classList.toggle("hidden",v!==name));document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.view===name));if(name==="library")render();window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
+function clearForm(){$("note-form").reset();editingId=null;$("editor-heading").textContent="新建阅读笔记 · Create a note";$("save-button").textContent="保存笔记 · Save note"}
+$("clear-button").addEventListener("click",clearForm);
+$("note-form").addEventListener("submit",e=>{e.preventDefault();const data={};fields.forEach(k=>data[k]=$(k).value.trim());if(!data.title){alert("请填写文章标题。");return}const now=new Date().toISOString();if(editingId){const old=notes.find(n=>n.id===editingId);if(old)Object.assign(old,data,{updatedAt:now})}else notes.unshift({...data,id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())),createdAt:now,updatedAt:now});if(persist()){clearForm();showView("library")}});
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
+function action(label,cls,fn){const b=el("button",cls,label);b.type="button";b.addEventListener("click",fn);return b}
+function editNote(n){editingId=n.id;fields.forEach(k=>$(k).value=safe(n[k]));$("editor-heading").textContent="编辑阅读笔记 · Edit note";$("save-button").textContent="保存修改 · Save changes";showView("editor")}
+function deleteNote(id){if(!confirm("确定删除这篇笔记吗？此操作无法撤销。"))return;notes=notes.filter(n=>n.id!==id);if(persist())render()}
+function render(){const q=$("search").value.toLocaleLowerCase().trim(),sort=$("sort").value;let list=notes.filter(n=>fields.some(k=>safe(n[k]).toLocaleLowerCase().includes(q)));list.sort((a,b)=>sort==="title"?a.title.localeCompare(b.title):sort==="old"?safe(a.createdAt).localeCompare(safe(b.createdAt)):safe(b.createdAt).localeCompare(safe(a.createdAt)));$("stat-total").textContent=String(notes.length);$("stat-words").textContent=String(notes.reduce((s,n)=>s+safe(n.vocab).split(/\n/).filter(x=>x.trim()).length,0));$("notes-list").replaceChildren();if(!list.length){$("notes-list").append(el("div","empty",notes.length?"没有找到匹配的笔记。试试其他关键词。":"这里还没有笔记。点击「新建笔记」创建第一篇阅读记录。"));return}
+list.forEach(n=>{const card=el("article","note");card.append(el("h3","",n.title));const meta=[n.author,n.source,n.date].filter(Boolean).join(" · ");if(meta)card.append(el("div","meta",meta));const sections=[["MAIN IDEA · 核心观点",n.idea,""],["ENGLISH EXCERPT · 英文摘录",n.excerpt,""],["CHINESE · 中文理解",n.translation,"translation"],["VOCABULARY · 生词与表达",n.vocab,""],["STRUCTURE · 行文结构",n.structure,""],["LANGUAGE · 语言特色",n.language,""],["REFLECTION · 个人思考",n.originality,""]];sections.forEach(([label,value,cls])=>{if(!safe(value).trim())return;const s=el("div","note-section");s.append(el("div","label",label));s.append(el("p",cls,value));card.append(s)});const acts=el("div","actions");acts.append(action("编辑 Edit","small",()=>editNote(n)));acts.append(action("复制文本 Copy","secondary small",()=>{const txt=fields.map(k=>({title:"文章标题",source:"来源",date:"日期",author:"作者",idea:"核心观点",excerpt:"英文摘录",translation:"中文理解",vocab:"生词与表达",structure:"行文结构",language:"语言特色",originality:"个人思考"}[k]+":\n"+safe(n[k]))).join("\n\n");if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(()=>alert("已复制到剪贴板。")).catch(()=>downloadText("reading-note.txt",txt,"text/plain"));else downloadText("reading-note.txt",txt,"text/plain")}));acts.append(action("删除 Delete","danger small",()=>deleteNote(n.id)));card.append(acts);$("notes-list").append(card)})}
+$("search").addEventListener("input",render);$("sort").addEventListener("change",render);
+function downloadText(filename,text,mime){const blob=new Blob([text],{type:mime+";charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url)}
+$("export-button").addEventListener("click",()=>downloadText("bilingual-reading-notes-backup-"+new Date().toISOString().slice(0,10)+".json",JSON.stringify(notes,null,2),"application/json"));
+$("import-input").addEventListener("change",async function(){const file=this.files&&this.files[0];if(!file)return;try{const parsed=JSON.parse(await file.text());if(!Array.isArray(parsed)||!parsed.every(n=>n&&typeof n==="object"&&fields.every(k=>typeof n[k]==="string")))throw new Error("format");if(!confirm("导入 "+parsed.length+" 篇笔记？现有笔记将与备份合并；同 ID 的笔记以备份为准。")){this.value="";return}const map=new Map(notes.map(n=>[n.id,n]));parsed.forEach(n=>{if(typeof n.id!=="string"||!n.id)n.id=String(Date.now())+"-"+Math.random().toString(36).slice(2);map.set(n.id,n)});notes=Array.from(map.values());if(persist()){render();alert("导入完成。")}}catch(e){alert("无法读取该文件。请选择本项目导出的有效 JSON 备份。")}this.value=""});
+$("delete-all-button").addEventListener("click",()=>{if(!confirm("确定删除此浏览器中全部 "+notes.length+" 篇笔记吗？建议先导出备份。"))return;notes=[];if(persist()){render();alert("本机笔记已清空。")}});
+load();render();
+})();
+</script>
+</body>
+</html>
