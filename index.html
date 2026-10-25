@@ -1,1 +1,277 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#183b56">
+<title>Bilingual Reading Notes | 双语阅读笔记</title>
+<style>
+:root{--navy:#183b56;--blue:#2e6f95;--ink:#203040;--muted:#657786;--paper:#fff;--bg:#f2f5f8;--line:#dce4ea;--soft:#eaf2f7;--gold:#e7b45a;--danger:#a33b3b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:linear-gradient(135deg,#183b56,#2e6f95);color:#fff;padding:28px 18px 24px}
+.wrap{width:min(920px,100%);margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:#ffffff20;font-size:24px}
+h1{font-size:clamp(23px,5vw,32px);line-height:1.2;margin:0}
+header p{margin:10px 0 0;color:#e2edf5}
+.header-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.header-link{display:inline-flex;align-items:center;text-decoration:none;background:#ffffff20;border:1px solid #ffffff70;color:#fff;border-radius:9px;padding:8px 12px;font-weight:650}
+.header-link:hover{background:#ffffff30}
+main{padding:20px 14px 42px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{border:1px solid var(--line);background:#fff;color:var(--navy);padding:10px 14px;border-radius:999px;font:inherit;cursor:pointer}
+.tab.active{background:var(--navy);color:white;border-color:var(--navy)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px;box-shadow:0 3px 14px #193b5610}
+h2{font-size:20px;margin:0 0 12px}
+h3{font-size:17px;margin:0 0 8px}
+label{display:block;font-weight:650;margin:12px 0 5px}
+input,textarea,select{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid #c8d4de;border-radius:9px;padding:11px 12px}
+textarea{min-height:82px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid #9fc7df;border-color:var(--blue)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+button,.file-button{font:inherit;border:0;border-radius:9px;background:var(--blue);color:white;padding:10px 14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+button.secondary,.file-button{background:var(--soft);color:var(--navy)}
+button.danger{background:#f9eaea;color:var(--danger)}
+button.small{padding:7px 10px;font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.muted{color:var(--muted);font-size:14px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;flex:1;min-width:100px}
+.stat strong{display:block;font-size:22px;color:var(--navy)}
+.searchrow{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.searchrow input{flex:1;min-width:0}
+.note{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+.note h3{font-size:19px;overflow-wrap:anywhere}
+.note .meta{color:var(--muted);font-size:13px;margin:3px 0 12px}
+.note-section{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+.note-section .label{font-size:12px;font-weight:750;letter-spacing:.04em;color:var(--blue);margin-bottom:4px}
+.note-section p{white-space:pre-wrap;margin:0;overflow-wrap:anywhere}
+.translation{background:var(--soft);padding:10px;border-radius:8px}
+.empty{text-align:center;padding:28px 12px;color:var(--muted);background:#fff;border:1px dashed #bdcbd6;border-radius:12px}
+.hidden{display:none!important}
+.file-button input{display:none}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:0 12px 28px}
+hr{border:0;border-top:1px solid var(--line);margin:16px 0}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.panel{padding:15px}.searchrow{align-items:stretch;flex-wrap:wrap}.searchrow input{flex-basis:100%}button{min-height:42px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand"><div class="logo" aria-hidden="true">文</div><div><h1>Bilingual Reading Notes</h1><div>双语阅读笔记</div></div></div>
+    <p>Read deeply. Think critically. Learn bilingually.<br>精读文章 · 积累表达 · 训练批判性思维</p>
+    <div class="header-actions"><a class="header-link" href="https://canva.link/a5k2dcrv1zxob7f" target="_blank" rel="noopener noreferrer">🎨 打开 Canva 精读轮播模板</a></div>
+  </div>
+</header>
+<main class="wrap">
+  <div class="tabs" role="tablist" aria-label="主菜单">
+    <button class="tab active" data-view="library">📚 我的笔记库</button>
+    <button class="tab" data-view="editor">✍️ 新建笔记</button>
+    <button class="tab" data-view="backup">💾 备份与数据</button>
+  </div>
 
+  <section id="library-view">
+    <div class="stats">
+      <div class="stat"><strong id="stat-total">0</strong><span class="muted">篇笔记 Notes</span></div>
+      <div class="stat"><strong id="stat-words">0</strong><span class="muted">条词汇记录 Vocab</span></div>
+    </div>
+    <div class="panel">
+      <h2>Find a note / 查找笔记</h2>
+      <div class="searchrow">
+        <input id="search" type="search" placeholder="搜索标题、文章来源、英文或中文内容…">
+        <select id="sort" aria-label="排序方式" style="width:auto;max-width:150px"><option value="new">最新创建</option><option value="old">最早创建</option><option value="title">标题 A–Z</option></select>
+      </div>
+      <p class="muted">提示：可搜索文章标题、词汇、观点或分析内容。</p>
+    </div>
+    <div id="notes-list"></div>
+  </section>
+
+  <section id="editor-view" class="hidden">
+    <div class="panel">
+      <h2 id="editor-heading">Create a note / 新建阅读笔记</h2>
+      <p class="muted">带 * 的标题为必填。保存后，笔记会保存在当前浏览器中。</p>
+      <form id="note-form">
+        <div class="grid">
+          <div><label for="title">Article title / 文章标题 *</label><input id="title" required maxlength="180" placeholder="Lest we remember"></div>
+          <div><label for="source">Source / 来源</label><input id="source" maxlength="180" placeholder="The Economist"></div>
+          <div><label for="date">Reading date / 阅读日期</label><input id="date" type="date"></div>
+          <div><label for="author">Author / 作者（选填）</label><input id="author" maxlength="120" placeholder="Author's name"></div>
+        </div>
+        <label for="idea">Main idea / 核心观点</label><textarea id="idea" placeholder="作者的主要论点是什么？What is the author's main argument?"></textarea>
+        <label for="excerpt">English excerpt / 英文摘录</label><textarea id="excerpt" placeholder="记录短句、关键表达或值得分析的段落。"></textarea>
+        <label for="translation">Chinese translation / 中文翻译</label><textarea id="translation" placeholder="记录自己的译文、释义或理解。"></textarea>
+        <label for="vocab">Vocabulary & chunks / 生词与表达</label><textarea id="vocab" placeholder="例：collective memory — 集体记忆 — Collective memory shapes identity."></textarea>
+        <label for="structure">Structure / 行文结构</label><textarea id="structure" placeholder="作者如何展开论证？段落之间如何衔接？"></textarea>
+        <label for="language">Language / 语言特色</label><textarea id="language" placeholder="连接词、修辞、语气、句式或翻译难点。"></textarea>
+        <label for="originality">Originality & reflection / 独到之处与个人思考</label><textarea id="originality" placeholder="这篇文章让你重新思考了什么？你同意作者吗？"></textarea>
+        <div class="actions"><button id="save-button" type="submit">保存笔记 Save note</button><button class="secondary" id="clear-button" type="button">清空表单 Clear form</button></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="backup-view" class="hidden">
+    <div class="panel">
+      <h2>Backup & restore / 备份与恢复</h2>
+      <p>笔记目前保存在这个浏览器的本地存储中。清除浏览器数据、换手机或换浏览器可能导致笔记丢失，因此请定期导出 JSON 备份。</p>
+      <div class="actions"><button id="export-button" type="button">导出全部笔记 JSON</button><label class="file-button">导入备份 JSON<input id="import-input" type="file" accept=".json,application/json"></label></div>
+      <hr>
+      <h3>Storage note / 关于数据保存</h3>
+      <p class="muted">这是一个静态网页，不会把笔记自动上传到 GitHub 或云端。导出的备份文件可能包含你的私人笔记，请妥善保管。</p>
+      <hr>
+      <h3>Danger zone / 危险操作</h3>
+      <p class="muted">只有在你确定不再需要当前浏览器中的所有笔记时，才使用清空操作。建议先导出备份。</p>
+      <button class="danger" id="delete-all-button" type="button">删除本机全部笔记</button>
+    </div>
+  </section>
+</main>
+<footer>Bilingual Reading Notes · A small project for lifelong learning<br>数据仅保存在当前浏览器；请定期备份。 · <a href="https://canva.link/a5k2dcrv1zxob7f" target="_blank" rel="noopener noreferrer">Canva 模板</a></footer>
+
+<script>
+(function(){
+  "use strict";
+  const KEY = "bilingual-reading-notes-v1";
+  const fields = ["title","source","date","author","idea","excerpt","translation","vocab","structure","language","originality"];
+  let notes = [];
+  let editingId = null;
+  const $ = id => document.getElementById(id);
+  const safe = value => typeof value === "string" ? value : "";
+  function load(){
+    const starterNote = JSON.parse("{\"id\": \"starter-thoroughly-modern-marx\", \"title\": \"Thoroughly Modern Marx\uff5c\u53cc\u8bed\u7cbe\u8bfb\u4e0e\u8868\u8fbe\u62c6\u89e3\", \"source\": \"Foreign Policy, May/June 2009\uff1b\u8bfe\u7a0b\u9605\u8bfb\u6750\u6599 Unit 2, Text 5\", \"date\": \"2026-10-25\", \"author\": \"Leo Panitch\", \"idea\": \"\u6587\u7ae0\u4ee52008\u5e74\u91d1\u878d\u5371\u673a\u4e3a\u80cc\u666f\uff0c\u89e3\u91ca\u9a6c\u514b\u601d\u4e3a\u4ec0\u4e48\u91cd\u65b0\u53d7\u5230\u5173\u6ce8\u3002\u4f5c\u8005\u8ba4\u4e3a\uff0c\u9a6c\u514b\u601d\u5bf9\u8d44\u672c\u4e3b\u4e49\u5e02\u573a\u7ade\u4e89\u3001\u91d1\u878d\u6295\u673a\u548c\u5468\u671f\u6027\u5371\u673a\u7684\u5206\u6790\u4ecd\u6709\u89e3\u91ca\u529b\uff1b\u4f46\u5371\u673a\u672c\u8eab\u4e0d\u4f1a\u81ea\u52a8\u5e26\u6765\u793e\u4f1a\u53d8\u9769\u3002\u4f5c\u8005\u5c24\u5176\u5f3a\u8c03\u96c6\u4f53\u7ec4\u7ec7\u3001\u653f\u6cbb\u884c\u52a8\u548c\u5236\u5ea6\u5efa\u8bbe\u7684\u91cd\u8981\u6027\u3002\u6ce8\u610f\uff1a\u8fd9\u662f\u4f5c\u8005\u7684\u8bba\u8bc1\u7acb\u573a\uff0c\u4e0d\u7b49\u4e8e\u6240\u6709\u7ecf\u6d4e\u5b66\u5bb6\u90fd\u8ba4\u540c\u7684\u5b9a\u8bba\u3002\", \"excerpt\": \"\u201cthe contradictions inherent in a world comprised of competitive markets, commodity production, and financial speculation\u201d (para. 3)\\n\u201cthinking inside the box\u201d (para. 11)\\n\u201cmicrorational behavior has the worst macroeconomic outcomes\u201d (para. 14)\\n\u201csuch crises are part and parcel of capitalism's continued dynamic existence\u201d (para. 17)\", \"translation\": \"\u7b2c3\u6bb5\uff1a\u7ade\u4e89\u6027\u5e02\u573a\u3001\u5546\u54c1\u751f\u4ea7\u548c\u91d1\u878d\u6295\u673a\u6240\u6784\u6210\u7684\u4e16\u754c\uff0c\u5176\u5185\u5728\u77db\u76fe\u3002\\n\u7b2c11\u6bb5\uff1a\u5728\u65e2\u6709\u6846\u67b6\u5185\u601d\u8003\u3002\u4f5c\u8005\u7528\u5b83\u6279\u8bc4\u53ea\u505a\u6709\u9650\u4fee\u8865\u3001\u5374\u4e0d\u6539\u53d8\u57fa\u672c\u5236\u5ea6\u903b\u8f91\u7684\u65b9\u6848\u3002\\n\u7b2c14\u6bb5\uff1a\u5fae\u89c2\u5c42\u9762\u770b\u4f3c\u7406\u6027\u7684\u884c\u4e3a\uff0c\u53ef\u80fd\u9020\u6210\u6700\u7cdf\u7cd5\u7684\u5b8f\u89c2\u7ecf\u6d4e\u7ed3\u679c\u3002\\n\u7b2c17\u6bb5\uff1a\u8fd9\u7c7b\u5371\u673a\u662f\u8d44\u672c\u4e3b\u4e49\u6301\u7eed\u52a8\u6001\u53d1\u5c55\u8fc7\u7a0b\u4e2d\u7684\u7ec4\u6210\u90e8\u5206\u3002\u4ee5\u4e0a\u4e3a\u5b66\u4e60\u7528\u8bd1\u610f\uff0c\u5177\u4f53\u8bd1\u6cd5\u53ef\u6839\u636e\u4e0a\u4e0b\u6587\u8c03\u6574\u3002\", \"vocab\": \"1. inherent in sth. \u2014 \u5185\u5728\u4e8e\u2026\u2026\uff1b\u662f\u2026\u2026\u56fa\u6709\u7684\\nOriginal example: Uncertainty is inherent in long-term investment. \u2014 \u4e0d\u786e\u5b9a\u6027\u662f\u957f\u671f\u6295\u8d44\u56fa\u6709\u7684\u4e00\u90e8\u5206\u3002\\n\\n2. think inside the box \u2014 \u5c40\u9650\u4e8e\u65e2\u6709\u6846\u67b6\u601d\u8003\uff1b\u4e0e think outside the box\uff08\u8df3\u51fa\u6846\u67b6\u601d\u8003\uff09\u5f62\u6210\u5bf9\u7167\u3002\\nOriginal example: The team kept thinking inside the box and proposed only minor changes. \u2014 \u56e2\u961f\u4e00\u76f4\u5c40\u9650\u4e8e\u65e2\u6709\u6846\u67b6\uff0c\u53ea\u63d0\u51fa\u4e86\u5c0f\u5e45\u4fee\u6539\u3002\\n\\n3. part and parcel of sth. \u2014 \u2026\u2026\u4e0d\u53ef\u5206\u5272\u7684\u4e00\u90e8\u5206\uff1b\u5e38\u7528\u4e8e\u8bf4\u660e\u67d0\u79cd\u60c5\u51b5\u662f\u67d0\u4e2a\u8fc7\u7a0b\u6216\u751f\u6d3b\u7684\u4e00\u90e8\u5206\u3002\\nOriginal example: Feedback is part and parcel of learning a language. \u2014 \u53cd\u9988\u662f\u8bed\u8a00\u5b66\u4e60\u4e0d\u53ef\u5206\u5272\u7684\u4e00\u90e8\u5206\u3002\\n\\n4. not merely A but B / not merely to do A but to do B \u2014 \u4e0d\u53ea\u662fA\uff0c\u800c\u662fB\uff1b\u7528\u4e8e\u7a81\u51fa\u66f4\u91cd\u8981\u3001\u66f4\u6df1\u4e00\u5c42\u7684\u76ee\u6807\u3002\\nOriginal example: Critical reading means not merely understanding a claim but examining how it is supported. \u2014 \u6279\u5224\u6027\u9605\u8bfb\u4e0d\u53ea\u662f\u7406\u89e3\u89c2\u70b9\uff0c\u8fd8\u8981\u8003\u5bdf\u89c2\u70b9\u5982\u4f55\u5f97\u5230\u8bba\u8bc1\u3002\", \"structure\": \"1\u20132\u6bb5\uff1a\u7528\u91d1\u878d\u5371\u673a\u548c\u300a\u8d44\u672c\u8bba\u300b\u9500\u91cf\u4e0a\u5347\u5f15\u51fa\u95ee\u9898\u3002\\n3\u20136\u6bb5\uff1a\u56de\u987e\u9a6c\u514b\u601d\u5bf9\u8d44\u672c\u4e3b\u4e49\u5168\u7403\u5316\u3001\u5e02\u573a\u6269\u5f20\u548c\u5371\u673a\u503e\u5411\u7684\u5206\u6790\uff0c\u5e76\u63d0\u51fa\u201c\u4eca\u5929\u4e3a\u4ec0\u4e48\u4ecd\u8981\u8bfb\u9a6c\u514b\u601d\u201d\u3002\\n7\u201310\u6bb5\uff1a\u89e3\u91ca\u91d1\u878d\u521b\u65b0\u3001\u4fe1\u8d37\u4f9d\u8d56\u548c\u4f4f\u623f\u6ce1\u6cab\u5982\u4f55\u4e0e\u793e\u4f1a\u8106\u5f31\u6027\u76f8\u8054\u7cfb\uff1b\u7ee7\u800c\u6307\u51fa\u7ecf\u6d4e\u707e\u96be\u4e0d\u4f1a\u81ea\u52a8\u5e26\u6765\u6539\u53d8\uff0c\u793e\u4f1a\u5b64\u7acb\u53ef\u80fd\u5bfc\u81f4\u88ab\u52a8\u3002\\n11\u201313\u6bb5\uff1a\u6bd4\u8f83\u6709\u9650\u6539\u9769\u4e0e\u66f4\u6df1\u5c42\u7684\u91d1\u878d\u5236\u5ea6\u6539\u9769\uff0c\u5f3a\u8c03\u5236\u5ea6\u65b9\u6848\u9700\u8981\u793e\u4f1a\u529b\u91cf\u548c\u653f\u6cbb\u8fd0\u52a8\u652f\u6301\u3002\\n14\u201316\u6bb5\uff1a\u4ece\u4f01\u4e1a\u4e2a\u4f53\u7684\u81ea\u4fdd\u884c\u4e3a\u8c08\u5230\u5b8f\u89c2\u540e\u679c\uff0c\u5e76\u628a\u8bba\u8bc1\u5ef6\u4f38\u81f3\u6c14\u5019\u95ee\u9898\u548c\u56fd\u9645\u56e2\u7ed3\u3002\\n17\u6bb5\uff1a\u56de\u5230\u5168\u6587\u6838\u5fc3\u5224\u65ad\u2014\u2014\u5371\u673a\u662f\u8d44\u672c\u4e3b\u4e49\u52a8\u6001\u8fd0\u884c\u7684\u4e00\u90e8\u5206\uff0c\u9a6c\u514b\u601d\u56e0\u6b64\u88ab\u4f5c\u8005\u8bc4\u4ef7\u4e3a\u66f4\u73b0\u5b9e\u7684\u601d\u60f3\u5bb6\u3002\", \"language\": \"\u2022 \u8bbe\u95ee\u63a8\u8fdb\uff1a\u7b2c3\u6bb5\u4ee5\u201cwhy resurrect Marx?\u201d\u628a\u80cc\u666f\u4ecb\u7ecd\u8f6c\u4e3a\u6838\u5fc3\u95ee\u9898\u3002\\n\u2022 \u5f15\u7528\u4e0e\u5386\u53f2\u7c7b\u6bd4\uff1a\u5f15\u7528\u9a6c\u514b\u601d\u8457\u4f5c\uff0c\u5e76\u5c0619\u4e16\u7eaa\u7684\u5206\u6790\u4e0e\u73b0\u4ee3\u91d1\u878d\u673a\u6784\u3001\u91d1\u878d\u5de5\u5177\u5e76\u7f6e\u3002\\n\u2022 \u5bf9\u6bd4\u7ed3\u6784\uff1a\u6709\u9650\u6539\u9769 vs. \u5236\u5ea6\u6027\u53d8\u9769\uff1b\u4e2a\u4f53\u5c42\u9762\u7684\u7406\u6027 vs. \u5b8f\u89c2\u5c42\u9762\u7684\u4e0d\u826f\u7ed3\u679c\u3002\\n\u2022 \u9690\u55bb\u8868\u8fbe\uff1a\u7b2c8\u6bb5\u7684\u201csorcerer\u201d\u610f\u8c61\u628a\u8d44\u672c\u4e3b\u4e49\u63cf\u7ed8\u6210\u65e0\u6cd5\u63a7\u5236\u81ea\u5df1\u53ec\u5524\u51fa\u7684\u529b\u91cf\uff0c\u5f3a\u5316\u5931\u63a7\u611f\u3002\\n\u2022 \u8bc4\u4ef7\u6027\u8bed\u6c14\uff1a\u4f5c\u8005\u5e76\u975e\u4e2d\u6027\u7f57\u5217\u89c2\u70b9\uff0c\u800c\u662f\u660e\u786e\u503e\u5411\u4e8e\u96c6\u4f53\u884c\u52a8\u548c\u66f4\u6df1\u5c42\u7684\u5236\u5ea6\u53d8\u9769\u3002\u9605\u8bfb\u65f6\u5e94\u533a\u5206\u4e8b\u5b9e\u80cc\u666f\u3001\u4f5c\u8005\u89e3\u91ca\u548c\u4ef7\u503c\u5224\u65ad\u3002\", \"originality\": \"\u6700\u503c\u5f97\u6ce8\u610f\u7684\u4e0d\u662f\u201c\u5371\u673a\u8bc1\u660e\u9a6c\u514b\u601d\u5b8c\u5168\u6b63\u786e\u201d\u8fd9\u79cd\u7b80\u5355\u7ed3\u8bba\uff0c\u800c\u662f\u4f5c\u8005\u628a\u95ee\u9898\u4ece\u91d1\u878d\u5e02\u573a\u51fa\u4e86\u4ec0\u4e48\u6545\u969c\uff0c\u63a8\u8fdb\u5230\u793e\u4f1a\u4e3a\u4ec0\u4e48\u96be\u4ee5\u7ec4\u7ec7\u51fa\u66ff\u4ee3\u65b9\u6848\u3002\u6587\u7ae0\u63d0\u793a\u6211\u4eec\u533a\u5206\u4e09\u4e2a\u5c42\u6b21\uff1a\u7ecf\u6d4e\u673a\u5236\u3001\u793e\u4f1a\u5173\u7cfb\u3001\u653f\u6cbb\u884c\u52a8\u3002\\n\\n\u6279\u5224\u6027\u9605\u8bfb\u95ee\u9898\uff1a\u4f5c\u8005\u75282008\u5e74\u5371\u673a\u652f\u6301\u9a6c\u514b\u601d\u7684\u5206\u6790\uff0c\u54ea\u4e9b\u8bba\u636e\u6700\u6709\u8bf4\u670d\u529b\uff1f\u54ea\u4e9b\u5730\u65b9\u5c5e\u4e8e\u63a8\u8bba\u6216\u653f\u6cbb\u7acb\u573a\uff0c\u800c\u4e0d\u662f\u5355\u51ed\u5371\u673a\u4e8b\u5b9e\u5c31\u80fd\u8bc1\u660e\u7684\u7ed3\u8bba\uff1f\\n\\n\u5185\u5bb9\u521b\u4f5c A+B\uff1aA\u7bc7\u8bb2\u6587\u7ae0\u8bba\u8bc1\u94fe\u6761\uff1bB\u7bc7\u5355\u72ec\u89e3\u91ca inherent in\u3001think inside the box\u3001part and parcel\uff0c\u5e76\u914d\u4e0a\u539f\u521b\u4f8b\u53e5\u3002\\nCanva \u6a21\u677f\uff1ahttps://canva.link/a5k2dcrv1zxob7f\", \"createdAt\": \"2026-10-25T00:00:00.000Z\", \"updatedAt\": \"2026-10-25T00:00:00.000Z\"}");
+    try {
+      const stored = localStorage.getItem(KEY);
+      if(stored === null){
+        notes = [starterNote];
+        localStorage.setItem(KEY, JSON.stringify(notes));
+      } else {
+        const parsed = JSON.parse(stored);
+        if(Array.isArray(parsed)) notes = parsed.filter(n => n && typeof n.id === "string" && fields.every(k => typeof n[k] === "string"));
+      }
+    } catch(e){ notes = [starterNote]; }
+  }
+  function persist(){
+    try { localStorage.setItem(KEY, JSON.stringify(notes)); return true; }
+    catch(e){ alert("保存失败。请先导出备份，并检查浏览器存储空间或隐私设置。"); return false; }
+  }
+  function showView(name){
+    ["library","editor","backup"].forEach(v => $(v+"-view").classList.toggle("hidden",v!==name));
+    document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active",b.dataset.view===name));
+    if(name==="library") render();
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  document.querySelectorAll(".tab").forEach(b => b.addEventListener("click",()=>showView(b.dataset.view)));
+  function clearForm(){
+    $("note-form").reset(); editingId=null;
+    $("editor-heading").textContent="Create a note / 新建阅读笔记";
+    $("save-button").textContent="保存笔记 Save note";
+  }
+  $("clear-button").addEventListener("click",clearForm);
+  $("note-form").addEventListener("submit",function(e){
+    e.preventDefault();
+    const data={}; fields.forEach(k=>data[k]=$(k).value.trim());
+    if(!data.title){alert("请填写文章标题。");return;}
+    const now=new Date().toISOString();
+    if(editingId){
+      const old=notes.find(n=>n.id===editingId);
+      if(old) Object.assign(old,data,{updatedAt:now});
+    }else{
+      notes.unshift({...data,id:(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+"-"+Math.random().toString(36).slice(2),createdAt:now,updatedAt:now});
+    }
+    if(persist()){clearForm();showView("library");}
+  });
+  function el(tag,cls,text){
+    const node=document.createElement(tag);
+    if(cls) node.className=cls;
+    if(text!==undefined) node.textContent=text;
+    return node;
+  }
+  function action(label,cls,fn){
+    const b=el("button",cls,label); b.type="button"; b.addEventListener("click",fn); return b;
+  }
+  function editNote(note){
+    editingId=note.id;
+    fields.forEach(k=>$(k).value=safe(note[k]));
+    $("editor-heading").textContent="Edit note / 编辑阅读笔记";
+    $("save-button").textContent="保存修改 Save changes";
+    showView("editor");
+  }
+  function deleteNote(id){
+    if(!confirm("确定删除这篇笔记吗？此操作无法撤销。")) return;
+    notes=notes.filter(n=>n.id!==id);
+    if(persist()) render();
+  }
+  function render(){
+    const query=$("search").value.toLocaleLowerCase().trim();
+    const sort=$("sort").value;
+    let filtered=notes.filter(n=>fields.some(k=>safe(n[k]).toLocaleLowerCase().includes(query)));
+    filtered.sort((a,b)=>sort==="title"?a.title.localeCompare(b.title):sort==="old"?safe(a.createdAt).localeCompare(safe(b.createdAt)):safe(b.createdAt).localeCompare(safe(a.createdAt)));
+    $("stat-total").textContent=String(notes.length);
+    $("stat-words").textContent=String(notes.reduce((sum,n)=>sum+(safe(n.vocab).split(/\n/).filter(s=>s.trim()).length),0));
+    $("notes-list").replaceChildren();
+    if(!filtered.length){
+      const empty=el("div","empty",notes.length?"没有找到匹配的笔记。试试其他关键词。":"这里还没有笔记。点击上方「新建笔记」，创建你的第一篇阅读记录。");
+      $("notes-list").append(empty); return;
+    }
+    filtered.forEach(n=>{
+      const card=el("article","note");
+      card.append(el("h3","",n.title));
+      const meta=[n.author,n.source,n.date].filter(Boolean).join(" · ");
+      if(meta) card.append(el("div","meta",meta));
+      const sections=[
+        ["MAIN IDEA · 核心观点",n.idea,""],
+        ["ENGLISH EXCERPT · 英文摘录",n.excerpt,""],
+        ["CHINESE · 中文翻译",n.translation,"translation"],
+        ["VOCABULARY · 生词与表达",n.vocab,""],
+        ["STRUCTURE · 行文结构",n.structure,""],
+        ["LANGUAGE · 语言特色",n.language,""],
+        ["REFLECTION · 个人思考",n.originality,""]
+      ];
+      sections.forEach(([label,value,cls])=>{
+        if(!safe(value).trim()) return;
+        const section=el("div","note-section");
+        section.append(el("div","label",label));
+        const p=el("p",cls,value); section.append(p); card.append(section);
+      });
+      const actions=el("div","actions");
+      actions.append(action("编辑 Edit","small",()=>editNote(n)));
+      actions.append(action("复制文本 Copy","secondary small",()=>{
+        const text=fields.map(k=>({title:"文章标题",source:"来源",date:"日期",author:"作者",idea:"核心观点",excerpt:"英文摘录",translation:"中文翻译",vocab:"生词与表达",structure:"行文结构",language:"语言特色",originality:"个人思考"}[k]+":\n"+safe(n[k]))).join("\n\n");
+        if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(()=>alert("已复制到剪贴板。")).catch(()=>downloadText("reading-note.txt",text,"text/plain"));
+        else downloadText("reading-note.txt",text,"text/plain");
+      }));
+      actions.append(action("删除 Delete","danger small",()=>deleteNote(n.id)));
+      card.append(actions); $("notes-list").append(card);
+    });
+  }
+  $("search").addEventListener("input",render);
+  $("sort").addEventListener("change",render);
+  function downloadText(filename,text,mime){
+    const blob=new Blob([text],{type:mime+";charset=utf-8"});
+    const url=URL.createObjectURL(blob); const a=document.createElement("a");
+    a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url);
+  }
+  $("export-button").addEventListener("click",()=>{
+    downloadText("bilingual-reading-notes-backup-"+new Date().toISOString().slice(0,10)+".json",JSON.stringify(notes,null,2),"application/json");
+  });
+  $("import-input").addEventListener("change",async function(){
+    const file=this.files&&this.files[0]; if(!file)return;
+    try{
+      const parsed=JSON.parse(await file.text());
+      if(!Array.isArray(parsed)||!parsed.every(n=>n&&typeof n==="object"&&fields.every(k=>typeof n[k]==="string"))){throw new Error("format");}
+      if(!confirm("导入 "+parsed.length+" 篇笔记？现有笔记将与备份合并；同 ID 的笔记以备份为准。")){this.value="";return;}
+      const map=new Map(notes.map(n=>[n.id,n]));
+      parsed.forEach(n=>{if(typeof n.id!=="string"||!n.id)n.id=String(Date.now())+"-"+Math.random().toString(36).slice(2);map.set(n.id,n);});
+      notes=Array.from(map.values());
+      if(persist()){render();alert("导入完成。");}
+    }catch(e){alert("无法读取该文件。请选择本项目导出的有效 JSON 备份。");}
+    this.value="";
+  });
+  $("delete-all-button").addEventListener("click",()=>{
+    if(!confirm("确定删除此浏览器中全部 "+notes.length+" 篇笔记吗？建议先导出备份。"))return;
+    notes=[]; if(persist()){render();alert("本机笔记已清空。");}
+  });
+  load();render();
+})();
+</script>
+</body>
+</html>
