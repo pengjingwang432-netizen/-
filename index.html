@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#15354b">
+<meta name="theme-color" content="#15354b">\n<meta name="description" content="双语精读、论证结构、哲学思考与本地知识检索。">
 <title>Bilingual Reading Notes｜双语阅读笔记</title>
 <style>
 :root{--navy:#15354b;--blue:#28749a;--ink:#203040;--muted:#627789;--paper:#fff;--bg:#f3f6f9;--line:#dbe5ec;--soft:#edf5f8;--gold:#e5b45f;--danger:#a33b3b}
@@ -23,6 +23,9 @@ main{padding:20px 14px 44px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bot
 <main class="wrap">
   <div class="tabs" role="tablist" aria-label="主菜单">
     <button class="tab active" data-view="library">📚 阅读首页</button>
+    <button class="tab" data-view="study">🧠 专题精读</button>
+    <button class="tab" data-view="philosophy">💭 哲学思考</button>
+    <button class="tab" data-view="knowledge">🔎 知识检索</button>
     <button class="tab" data-view="editor">✍️ 新建笔记</button>
     <button class="tab" data-view="backup">💾 备份与数据</button>
   </div>
@@ -48,10 +51,156 @@ main{padding:20px 14px 44px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bot
       </div>
       <p class="guide-note">学习提示：上面是根据课程阅读材料整理的导读与结构概括，不是原文逐字摘录；阅读时应区分文章背景、作者解释、推论与价值判断。</p>
     </section>
+    <section class="featured-guide" style="margin-top:18px" aria-labelledby="brains-home-title">
+      <div class="guide-kicker">Unit 3 · Science and Technology</div>
+      <h2 class="guide-title" id="brains-home-title">Computers vs. Brains</h2>
+      <p class="lead">Sandra Aamodt 与 Sam Wang 从能耗、记忆、适应性与判断偏差出发，质疑“只要计算能力持续增长，机器就必然超越人脑”的简单推论。</p>
+      <div class="article-meta">
+        <span class="meta-chip">✍️ Sandra Aamodt & Sam Wang</span><span class="meta-chip">📰 The New York Times</span><span class="meta-chip">📅 March 31, 2009</span><span class="meta-chip">📖 Unit 3 · Text 1</span>
+      </div>
+      <div class="actions"><button type="button" onclick="document.querySelector('[data-view=study]').click()">进入专题精读 →</button><button type="button" class="secondary" onclick="document.querySelector('[data-view=philosophy]').click()">查看哲学思考 →</button></div>
+    </section>
     <div class="stats"><div class="stat"><strong id="stat-total">0</strong><span class="muted">篇笔记 Notes</span></div><div class="stat"><strong id="stat-words">0</strong><span class="muted">条表达记录 Expressions</span></div></div>
     <div class="panel"><h2>🔎 查找笔记 · Find a note</h2><div class="searchrow"><input id="search" type="search" placeholder="搜索文章标题、来源、英文表达或中文内容…"><select id="sort" aria-label="排序方式" style="width:auto;max-width:155px"><option value="new">最新创建</option><option value="old">最早创建</option><option value="title">标题 A–Z</option></select></div><p class="muted">小提示：可以搜索作者、刊物、关键词或自己的反思。</p></div>
     <div class="section-heading"><h2>我的笔记库 <span class="muted">· My reading library</span></h2></div><div id="notes-list"></div>
   </section>
+  <section id="study-view" class="hidden">
+    <section class="featured-guide">
+      <div class="guide-kicker">Unit 3 · Science and Technology · 专题精读</div>
+      <h2 class="guide-title">Computers vs. Brains</h2>
+      <p class="lead">Sandra Aamodt 与 Sam Wang｜The New York Times｜March 31, 2009</p>
+      <p class="muted">本页根据你上传的课程 PDF 整理。本文中的数字与未来预测属于作者在 2009 年写作时的论证材料，不应直接当作今天仍然成立的技术现状。</p>
+    </section>
+
+    <div class="panel">
+      <h2>01 · 一句话抓住主旨</h2>
+      <p>作者并不是简单地说“电脑不如人脑”，而是指出：把人脑等同于一台不断升级的数字计算机，会忽略生物进化形成的结构、能效、可塑性，以及人类在复杂情境中依赖情绪和背景知识作判断的方式。</p>
+      <div class="guide-grid">
+        <div class="guide-block"><h3>作者主要反驳什么？</h3><p>文章反驳一种过于直线的推论：只要延续芯片性能增长趋势，机器就会在不久的将来以类似人脑的方式思考，并自然超过人类。</p></div>
+        <div class="guide-block"><h3>作者承认了什么？</h3><p>人脑并非完美的信息处理器。它会使用近似判断，产生偏见，也会犯错；工程师仍可能从大脑的策略中获得启发。</p></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>02 · 论证结构地图</h2>
+      <div class="reading-path">
+        <div class="path-step"><strong>第 1–3 段｜提出争论</strong><span>引入 Kurzweil 对机器超越人类的预测，再指出“生物计算机”比喻会遗漏进化历史造成的复杂性。</span></div>
+        <div class="path-step"><strong>第 4–6 段｜记忆与结构</strong><span>以神经元、轴突、突触的密集连接和连接可形成、断开等特征，说明大脑的信息存储并非简单复制硬盘结构。</span></div>
+        <div class="path-step"><strong>第 7–9 段｜能耗反驳</strong><span>作者借摩尔定律推演计算能力增长的可能性，随后把焦点转向能耗成本，并对比人脑的低功耗。</span></div>
+        <div class="path-step"><strong>第 10–11 段｜重新定义“好”</strong><span>突触并非每次都可靠，但生物系统的成功标准不是机械重复，而是在现实环境中促成生存所需的行为；代价是错误与偏差。</span></div>
+        <div class="path-step"><strong>第 12–13 段｜承认互相学习</strong><span>情绪、背景知识和快速推断让人类能处理部分不确定情境；若计算机借鉴这些策略，也可能复制人类的缺陷。</span></div>
+        <div class="path-step"><strong>第 14–15 段｜反问目的</strong><span>作者追问为何一定要造人工大脑，并以带有幽默感的结尾提醒：制造一个高能力系统，与让它按人的意愿行动，并不是同一回事。</span></div>
+      </div>
+      <p class="guide-note">结构提示：文章不是单纯罗列“人脑优点”，而是先质疑预测依据，再讨论工程约束，接着承认人脑的缺陷，最后反问技术目标本身。</p>
+    </div>
+
+    <div class="panel">
+      <h2>03 · 核心概念拆解</h2>
+      <div class="guide-grid">
+        <div class="guide-block"><h3>Evolutionary history｜进化历史</h3><p>作者把大脑比作一辆不断运行、又持续加装新部件的老汽车。比喻重点不是“大脑设计得完美”，而是自然选择往往在既有结构上改造，而非从零开始重新设计。</p></div>
+        <div class="guide-block"><h3>Compactness & energy efficiency｜紧凑与能效</h3><p>文章强调神经系统在有限空间里容纳大量连接，并以能耗作为比较维度。这里的论证提醒读者：性能不只看速度或容量，还要考虑实现这些能力的成本。</p></div>
+        <div class="guide-block"><h3>Plasticity｜可塑性</h3><p>神经连接可以形成和断开，意味着学习和记忆涉及结构变化。它与“存储容量不断变大”并非完全相同的概念：一个偏向静态容量，另一个涉及系统如何改变自身。</p></div>
+        <div class="guide-block"><h3>Good-enough solutions｜足够好的近似解</h3><p>人脑常用快捷判断应对复杂情境。这提高速度，却也可能产生因果错觉、刻板印象或短视决策。文章把效率与偏差放在同一枚硬币的两面。</p></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>04 · 重要表达与翻译观察</h2>
+      <div class="note-section"><div class="label">OUT-THINK</div><p>在本文语境中是“在思考能力上胜过、超越”。out- + 动词常表达“在某方面胜过某人”，例如 outsmart、outperform。翻译时要根据搭配补出具体的“胜过什么”。</p></div>
+      <div class="note-section"><div class="label">EXTRAPOLATE A TREND</div><p>根据已有趋势向未来推算。它不是单纯“预测”，而是把当前观察到的趋势延伸到未来；批判性阅读时应追问：趋势能否持续？是否忽略了其他约束？</p></div>
+      <div class="note-section"><div class="label">UNDERBELLY</div><p>字面义是“腹部、下腹部”，比喻义可指某事物不易察觉的薄弱处或阴暗面。本文用它引出摩尔定律背后容易被忽略的能耗问题。</p></div>
+      <div class="note-section"><div class="label">TRADE-OFF</div><p>权衡、取舍：获得某项优势时，往往需要接受另一项代价。本文的关键不是说“突触不可靠所以大脑不好”，而是讨论极小空间、高功能密度与可靠性之间可能存在的取舍。</p></div>
+      <div class="note-section"><div class="label">SOFT JUDGMENTS</div><p>不是“软弱的判断”，而是需要结合语境、背景信息和不确定性作出的灵活判断。可译为“灵活判断”“情境性判断”，具体选词取决于上下文。</p></div>
+      <p class="guide-note">上面是词义和语境说明；自拟例句应与原文引句区分。课程 PDF 的“Language Tips”也特别说明了 out- + 动词的构词方式。</p>
+    </div>
+
+    <div class="panel">
+      <h2>05 · 论证的强处与需要追问之处</h2>
+      <div class="guide-grid">
+        <div class="guide-block"><h3>有说服力的部分</h3><p>作者把讨论从“谁更聪明”扩展到能耗、系统结构、可靠性、适应性与判断目标。这些维度能提醒读者，单一指标不足以评价复杂系统。</p></div>
+        <div class="guide-block"><h3>需要谨慎的部分</h3><p>文中关于 2025–2030 年的推算是 2009 年基于当时趋势作出的预测。它可以用于分析作者的推理方法，却不能不经核查就当作今天的事实。文中的容量估算也依赖作者明确承认的假设。</p></div>
+      </div>
+      <p>阅读时可把论据分成三类：①关于大脑结构的描述；②根据假设进行的数量推算；③由这些材料推导出的技术与哲学判断。三者的证据强度并不相同。</p>
+      <div class="actions"><button type="button" onclick="document.querySelector('[data-view=philosophy]').click()">继续：哲学思考 →</button><button type="button" class="secondary" onclick="document.querySelector('[data-view=editor]').click()">把阅读心得写进笔记 →</button></div>
+    </div>
+  </section>
+
+  <section id="philosophy-view" class="hidden">
+    <div class="featured-guide">
+      <div class="guide-kicker">Beyond comprehension · 超越内容复述</div>
+      <h2 class="guide-title">从人脑与计算机，走向“什么是思考？”</h2>
+      <p class="lead">哲学思考不是给文章套一个宏大标签，而是追问：作者的论证依赖哪些概念、假设和价值标准？哪些结论能由材料支持，哪些仍需进一步论证？</p>
+    </div>
+    <div class="panel">
+      <h2>问题一｜智能能否被还原为计算能力？</h2>
+      <p><strong>文章触发点：</strong>作者质疑仅用芯片容量或增长曲线推断机器何时超越人脑。</p>
+      <p><strong>哲学分歧：</strong>一种观点认为，只要系统能实现相关的信息处理功能，底层材料未必重要；另一种观点则强调身体、环境、发展历程和实际互动可能构成智能的一部分。</p>
+      <p><strong>思考边界：</strong>本文能说明“单一计算指标不够”，但不能单凭这些论据证明机器永远无法思考。要支持更强的结论，还需要清晰界定“思考”“理解”和“智能”。</p>
+      <p><strong>可以继续问：</strong>如果机器能完成某项任务，我们是否就能说它理解了任务？能力表现与主观体验是同一个问题吗？</p>
+    </div>
+    <div class="panel">
+      <h2>问题二｜自然形成的系统一定优于人工设计吗？</h2>
+      <p><strong>文章触发点：</strong>大脑经过自然选择形成，结构复杂、能效高，也保留了历史路径留下的“拼接”痕迹。</p>
+      <p><strong>哲学思考：</strong>“自然形成”不等于“完美”，而“人工设计”也不自动等于“低级”。进化擅长在既有条件下保留有助于繁衍的特征，但这与工程师追求可控性、可维护性或特定任务性能，目标并不相同。</p>
+      <p><strong>关键区分：</strong>适应某种环境，不等于适用于所有环境；在生物进化中有用的特征，也不必然是机器设计的最佳方案。</p>
+      <p><strong>可以继续问：</strong>我们评价一个系统时，是用生存、效率、准确性、灵活性，还是可解释性作标准？不同标准可能产生不同答案。</p>
+    </div>
+    <div class="panel">
+      <h2>问题三｜理性与偏差为何会共存？</h2>
+      <p><strong>文章触发点：</strong>大脑会采用快速近似判断，这能应对复杂情境，却也会带来因果错觉和偏见。</p>
+      <p><strong>哲学联系：</strong>有限理性提醒我们，人并非在所有情境下都能获得完整信息、无限时间和完美计算能力。判断常是在资源有限时做出的折中。</p>
+      <p><strong>需要避免的误读：</strong>解释偏见如何产生，不等于为偏见辩护；指出某种偏差具有心理机制，也不意味着它在道德上可以接受。</p>
+      <p><strong>可以继续问：</strong>当偏见来自常见的认知机制时，个人反思、教育、制度规则和技术工具分别能做些什么？</p>
+    </div>
+    <div class="panel">
+      <h2>问题四｜“效率”究竟服务于什么目标？</h2>
+      <p><strong>文章触发点：</strong>作者提醒读者，大脑的成功标准不是每次都精确重复，而是引导有助于生存和繁衍的行为。</p>
+      <p><strong>价值判断：</strong>一个系统是否“好”，必须相对于目标来判断。快速不等于准确，准确不等于公平，能完成任务也不自动意味着任务本身值得做。</p>
+      <p><strong>技术伦理延伸：</strong>在评价 AI 时，除了能力和速度，还应追问错误由谁承担、系统对谁有效、哪些价值被写入目标，以及人是否保有必要的监督和纠正能力。</p>
+    </div>
+    <div class="panel">
+      <h2>问题五｜文章的幽默结尾真正提醒了什么？</h2>
+      <p>作者以“制造一个能处理大量信息的系统”与“让它按人的要求行动”之间的落差收尾。这个转折把技术问题推进到控制、意图和目标一致性：有能力不等于有相同的目标，执行命令也不总等于理解命令。</p>
+      <p>这是一个值得继续讨论的哲学问题，但不应把它误读为文章已经证明了某种机器意识理论。作者提出的是值得思考的挑战，而不是完成了所有争论的证明。</p>
+    </div>
+    <div class="panel">
+      <h2>我的思考卡｜写下你自己的立场</h2>
+      <label for="philo-prompt">选择一个问题</label>
+      <select id="philo-prompt">
+        <option>智能能否被还原为计算能力？</option>
+        <option>自然形成的系统一定优于人工设计吗？</option>
+        <option>解释偏见是否等于为偏见辩护？</option>
+        <option>评价 AI 时，效率和公平哪个更重要？</option>
+        <option>能力表现与真正理解是同一回事吗？</option>
+      </select>
+      <label for="philo-answer">写下你的论点、理由和反方观点</label>
+      <textarea id="philo-answer" placeholder="我的暂定观点是……；理由是……；一个可能的反对意见是……；我还需要什么证据？"></textarea>
+      <div class="actions"><button id="save-philo" type="button">保存为阅读笔记</button></div>
+      <p class="muted">保存后会进入原有笔记库，仍使用当前浏览器的本地存储。建议在“备份与数据”中定期导出。</p>
+    </div>
+  </section>
+
+  <section id="knowledge-view" class="hidden">
+    <div class="featured-guide">
+      <div class="guide-kicker">Search & retrieve · 检索与回顾</div>
+      <h2 class="guide-title">知识检索站</h2>
+      <p class="lead">同时检索专题精读、哲学问题、关键概念和你自己保存的阅读笔记。试试输入：trade-off、能耗、偏见、计算主义、论证结构。</p>
+    </div>
+    <div class="panel">
+      <h2>🔎 搜索知识库</h2>
+      <div class="searchrow"><input id="knowledge-query" type="search" placeholder="输入关键词、英文表达或哲学问题……"><button id="knowledge-clear" type="button" class="secondary">清空</button></div>
+      <div class="actions">
+        <button type="button" class="secondary quick-query" data-query="trade-off">trade-off</button>
+        <button type="button" class="secondary quick-query" data-query="能耗">能耗</button>
+        <button type="button" class="secondary quick-query" data-query="偏见">偏见</button>
+        <button type="button" class="secondary quick-query" data-query="智能">智能</button>
+        <button type="button" class="secondary quick-query" data-query="论证结构">论证结构</button>
+      </div>
+      <p class="muted">检索范围：专题导读、关键概念、哲学思考，以及当前浏览器中的个人笔记。搜索结果是本地匹配，不会把查询发送到外部服务。</p>
+    </div>
+    <div id="knowledge-results"></div>
+  </section>
+
   <section id="editor-view" class="hidden"><div class="panel">
     <h2 id="editor-heading">新建阅读笔记 · Create a note</h2><p class="muted">文章标题为必填。保存后，笔记保存在当前浏览器中。</p>
     <form id="note-form"><div class="grid">
@@ -76,7 +225,7 @@ main{padding:20px 14px 44px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bot
     <h3>删除本机数据 · Danger zone</h3><p class="muted">只有在确认不再需要当前浏览器中的笔记时才使用；建议先导出备份。</p><button class="danger" id="delete-all-button" type="button">删除本机全部笔记</button>
   </div></section>
 </main>
-<footer>Bilingual Reading Notes · A small project for lifelong learning<br>数据仅保存在当前浏览器；请定期备份。 · <a href="https://canva.link/a5k2dcrv1zxob7f" target="_blank" rel="noopener noreferrer">Canva 模板</a></footer>
+<footer>Bilingual Reading Notes · Reading, reasoning & reflection<br>数据仅保存在当前浏览器；请定期备份。 · <a href="https://canva.link/a5k2dcrv1zxob7f" target="_blank" rel="noopener noreferrer">Canva 模板</a></footer>
 <script>
 (function(){
 "use strict";
@@ -97,7 +246,7 @@ createdAt:"2026-10-25T00:00:00.000Z",updatedAt:"2026-10-25T00:00:00.000Z"
 };
 function load(){try{const raw=localStorage.getItem(KEY);if(raw===null){notes=[starterNote];localStorage.setItem(KEY,JSON.stringify(notes));}else{const parsed=JSON.parse(raw);notes=Array.isArray(parsed)?parsed.filter(n=>n&&typeof n.id==="string"&&fields.every(k=>typeof n[k]==="string")):[];if(!notes.length)notes=[starterNote];}}catch(e){notes=[starterNote];}}
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(notes));return true}catch(e){alert("保存失败。请先导出备份，并检查浏览器存储空间或隐私设置。");return false}}
-function showView(name){["library","editor","backup"].forEach(v=>$(v+"-view").classList.toggle("hidden",v!==name));document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.view===name));if(name==="library")render();window.scrollTo({top:0,behavior:"smooth"})}
+function showView(name){["library","study","philosophy","knowledge","editor","backup"].forEach(v=>$(v+"-view").classList.toggle("hidden",v!==name));document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.view===name));if(name==="library")render();if(name==="knowledge")renderKnowledge();window.scrollTo({top:0,behavior:"smooth"})}
 document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
 function clearForm(){$("note-form").reset();editingId=null;$("editor-heading").textContent="新建阅读笔记 · Create a note";$("save-button").textContent="保存笔记 · Save note"}
 $("clear-button").addEventListener("click",clearForm);
@@ -109,12 +258,13 @@ function deleteNote(id){if(!confirm("确定删除这篇笔记吗？此操作无�
 function render(){const q=$("search").value.toLocaleLowerCase().trim(),sort=$("sort").value;let list=notes.filter(n=>fields.some(k=>safe(n[k]).toLocaleLowerCase().includes(q)));list.sort((a,b)=>sort==="title"?a.title.localeCompare(b.title):sort==="old"?safe(a.createdAt).localeCompare(safe(b.createdAt)):safe(b.createdAt).localeCompare(safe(a.createdAt)));$("stat-total").textContent=String(notes.length);$("stat-words").textContent=String(notes.reduce((s,n)=>s+safe(n.vocab).split(/\n/).filter(x=>x.trim()).length,0));$("notes-list").replaceChildren();if(!list.length){$("notes-list").append(el("div","empty",notes.length?"没有找到匹配的笔记。试试其他关键词。":"这里还没有笔记。点击「新建笔记」创建第一篇阅读记录。"));return}
 list.forEach(n=>{const card=el("article","note");card.append(el("h3","",n.title));const meta=[n.author,n.source,n.date].filter(Boolean).join(" · ");if(meta)card.append(el("div","meta",meta));const sections=[["MAIN IDEA · 核心观点",n.idea,""],["ENGLISH EXCERPT · 英文摘录",n.excerpt,""],["CHINESE · 中文理解",n.translation,"translation"],["VOCABULARY · 生词与表达",n.vocab,""],["STRUCTURE · 行文结构",n.structure,""],["LANGUAGE · 语言特色",n.language,""],["REFLECTION · 个人思考",n.originality,""]];sections.forEach(([label,value,cls])=>{if(!safe(value).trim())return;const s=el("div","note-section");s.append(el("div","label",label));s.append(el("p",cls,value));card.append(s)});const acts=el("div","actions");acts.append(action("编辑 Edit","small",()=>editNote(n)));acts.append(action("复制文本 Copy","secondary small",()=>{const txt=fields.map(k=>({title:"文章标题",source:"来源",date:"日期",author:"作者",idea:"核心观点",excerpt:"英文摘录",translation:"中文理解",vocab:"生词与表达",structure:"行文结构",language:"语言特色",originality:"个人思考"}[k]+":\n"+safe(n[k]))).join("\n\n");if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(()=>alert("已复制到剪贴板。")).catch(()=>downloadText("reading-note.txt",txt,"text/plain"));else downloadText("reading-note.txt",txt,"text/plain")}));acts.append(action("删除 Delete","danger small",()=>deleteNote(n.id)));card.append(acts);$("notes-list").append(card)})}
 $("search").addEventListener("input",render);$("sort").addEventListener("change",render);
-function downloadText(filename,text,mime){const blob=new Blob([text],{type:mime+";charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url)}
-$("export-button").addEventListener("click",()=>downloadText("bilingual-reading-notes-backup-"+new Date().toISOString().slice(0,10)+".json",JSON.stringify(notes,null,2),"application/json"));
-$("import-input").addEventListener("change",async function(){const file=this.files&&this.files[0];if(!file)return;try{const parsed=JSON.parse(await file.text());if(!Array.isArray(parsed)||!parsed.every(n=>n&&typeof n==="object"&&fields.every(k=>typeof n[k]==="string")))throw new Error("format");if(!confirm("导入 "+parsed.length+" 篇笔记？现有笔记将与备份合并；同 ID 的笔记以备份为准。")){this.value="";return}const map=new Map(notes.map(n=>[n.id,n]));parsed.forEach(n=>{if(typeof n.id!=="string"||!n.id)n.id=String(Date.now())+"-"+Math.random().toString(36).slice(2);map.set(n.id,n)});notes=Array.from(map.values());if(persist()){render();alert("导入完成。")}}catch(e){alert("无法读取该文件。请选择本项目导出的有效 JSON 备份。")}this.value=""});
-$("delete-all-button").addEventListener("click",()=>{if(!confirm("确定删除此浏览器中全部 "+notes.length+" 篇笔记吗？建议先导出备份。"))return;notes=[];if(persist()){render();alert("本机笔记已清空。")}});
-load();render();
-})();
-</script>
-</body>
-</html>
+const knowledgeItems = [
+{title:"Computers vs. Brains｜核心论点",type:"专题精读",keywords:"人脑 计算机 人工智能 智能 计算主义 能力 预测",content:"作者反驳仅凭芯片增长趋势推断机器必然超越人类的简单推论。比较维度包括进化历史、结构紧凑性、能耗、可塑性、可靠性与情境判断。"},
+{title:"文章结构｜第 1–15 段",type:"论证结构",keywords:"段落 结构 论证 反驳 摩尔定律 结尾",content:"1–3 段提出争论；4–6 段讨论神经连接和记忆；7–9 段以能耗反驳简单外推；10–11 段讨论可靠性、取舍和偏差；12–13 段说明机器可借鉴大脑策略；14–15 段追问造人工大脑的目的。"},
+{title:"Trade-off｜权衡与取舍",type:"关键表达",keywords:"trade-off 取舍 权衡 可靠性 空间 效率",content:"当系统获得某种优势时，可能要承担另一种代价。本文用它讨论突触极小的结构与功能密度之间可能存在的权衡。"},
+{title:"Underbelly｜容易被忽略的薄弱处",type:"关键表达",keywords:"underbelly 摩尔定律 能耗 薄弱处 隐藏成本",content:"本文用 underbelly 引出芯片性能增长叙事背后容易被忽略的电力消耗问题。阅读时可以追问：一项技术指标的进步，是否掩盖了成本或外部性？"},
+{title:"Good-enough solutions｜足够好的近似解",type:"关键概念",keywords:"近似解 有限理性 启发式 偏见 错误 判断",content:"人脑常在信息和时间有限时使用快速近似判断。它能提高速度，也可能带来因果错觉和偏见。解释偏见的机制并不等于为偏见辩护。"},
+{title:"智能能否还原为计算能力？",type:"哲学思考",keywords:"智能 计算主义 理解 意识 身体 环境 功能主义",content:"文章提示单一计算指标不足以评价智能，但并不能证明机器永远无法思考。进一步讨论需要界定思考、理解、任务表现与主观体验。"},
+{title:"自然与人工设计",type:"哲学思考",keywords:"自然选择 进化 设计 优化 适应 环境",content:"自然形成不等于完美，人工设计也不自动低级。进化适应特定环境和繁衍压力，工程设计则可能追求可控、可维护或任务性能；评价标准不同，结论也可能不同。"},
+{title:"效率、准确性与公平",type:"哲学思考",keywords:"效率 准确性 公平 价值判断 人工智能 AI 伦理",content:"快速不等于准确，准确不等于公平，能完成任务也不自动意味着任务值得做。评价技术时还应追问目标由谁设定、错误由谁承担、谁从系统中受益。"},
+{ti
